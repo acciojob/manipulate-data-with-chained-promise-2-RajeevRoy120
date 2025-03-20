@@ -1,4 +1,3 @@
-//your JS code here. If required.
 // ✅ Function to simulate a delay using Promise
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -7,7 +6,7 @@ function delay(ms) {
 // ✅ Function to start array transformation using Promise chaining
 function manipulateArray() {
     const output = document.getElementById('output');
-
+    
     // Step 1: Start with the initial array after 3-second delay
     delay(3000)
         .then(() => {
@@ -20,7 +19,7 @@ function manipulateArray() {
         .then(arr => delay(1000).then(() => {
             const filteredArr = arr.filter(num => num % 2 === 0);
             console.log("After filtering:", filteredArr);
-            output.innerHTML = filteredArr.join(', ');
+            output.innerHTML = filteredArr.join(', '); // Update output
             return filteredArr;
         }))
 
@@ -28,7 +27,7 @@ function manipulateArray() {
         .then(filteredArr => delay(2000).then(() => {
             const multipliedArr = filteredArr.map(num => num * 2);
             console.log("After multiplying:", multipliedArr);
-            output.innerHTML = multipliedArr.join(', ');
+            output.innerHTML = multipliedArr.join(', '); // Update output
         }))
         .catch(err => {
             console.error("Error:", err);
